@@ -2,7 +2,7 @@
   "name": "electron-window",
   "version": "0.2.0",
   "description": "Convenience methods for Electron windows.",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "test": "standard"
   },
