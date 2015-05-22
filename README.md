@@ -50,7 +50,6 @@ Class property to get a reference to all windows created and their ids.
 
 
 
-
 ### Example
 
 **main process**
@@ -77,9 +76,8 @@ mainWindow.showUrl('index.html', args, function() {
 **renderer process**
 
 ```js
-var ewindow = require('electron-window')
 // only call if `preload` is set in `windowOptions`
-eWindow.parseArgs()
+require('electron-window').parseArgs()
 
 console.log(window.__args__)
 // => Object {data: "some secret data"}
