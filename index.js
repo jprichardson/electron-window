@@ -1,7 +1,10 @@
 var assert = require('assert')
 var path = require('path')
 var url = require('url')
-var BrowserWindow = require('browser-window')
+
+// only run in main process
+if (global.constructor.name !== 'Window')
+  var BrowserWindow = require('browser-window')
 
 // retain global references, if not, window will be closed automatically when
 // garbage collected
@@ -11,7 +14,8 @@ function createWindow (options) {
   var window = new BrowserWindow(extend({
     show: false,
     resizable: false,
-    frame: true
+    frame: true,
+    preload: __filename
   }, options))
 
   _windows[window.id] = window
@@ -36,10 +40,6 @@ function createWindow (options) {
     args = args ? encodeURIComponent(JSON.stringify(args)) : ''
 
     window.webContents.once('did-finish-load', callback)
-
-    window.webContents.once('did-start-loading', function () {
-      window.webContents.executeJavaScript('(' + parseArgs.toString() + ')()')
-    })
 
     if (httpOrFileUrl.indexOf('http') === 0) {
       var urlData = url.parse(httpOrFileUrl)
@@ -80,6 +80,12 @@ function parseArgs () {
   }
 }
 
+// fired from 'preload' in context of window renderer
+if (global.constructor.name === 'Window') {
+  parseArgs()
+}
+
 module.exports = {
-  createWindow: createWindow
+  createWindow: createWindow, // only call from main process
+  parseArgs: parseArgs // only call from renderer process
 }

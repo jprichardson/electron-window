@@ -22,12 +22,17 @@ the following default `options`: `{show: false, resizable: false, frame: true}`.
 to prevent garbage collection, this is handled for you.
 
 
+### parseArgs()
+
+Instance method to parse arguments in window. You would only need to call from your renderer preload script if you pass in
+[`preload`](https://github.com/atom/electron/blob/master/docs/api/browser-window.md#new-browserwindowoptions).
+
+
 #### showUrl(httpOrFileUrl, [argsForRenderer], callback)
 
 Instance method that shows the url. When the url is finished loading, the callback is returned. If the optional `argsForRenderer` is set
 then `__args__` will be a global object for the page in the renderer process. This is a convenient way to pass
 arguments from the main process to the renderer process.
-
 
 
 #### unref()
@@ -39,6 +44,8 @@ Most likely, you won't need to use this.
 
 
 ### Example
+
+**main process**
 
 ```js
 var window = require('electron-window')
@@ -53,6 +60,13 @@ var args = {
 mainWindow.showUrl('index.html', args, function() {
   console.log('the window should be showing with the contents of the URL now')
 })
+```
+
+**renderer process**
+
+```js
+console.log(window.__args__)
+// => Object {data: "some secret data"}
 ```
 
 
