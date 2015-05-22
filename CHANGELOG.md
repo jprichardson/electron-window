@@ -1,3 +1,7 @@
+0.2.1 / 2015-05-22
+------------------
+- fixed package.json main path bug
+
 0.2.0 / 2015-05-22
 ------------------
 - changed so `window.__args__` would be available right away
