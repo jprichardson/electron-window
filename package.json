@@ -1,0 +1,30 @@
+{
+  "name": "electron-window",
+  "version": "0.1.0",
+  "description": "Convenience methods for Electron windows.",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jprichardson/elecron-window"
+  },
+  "keywords": [
+    "window",
+    "atom",
+    "atom-shell",
+    "electron",
+    "gui",
+    "electron-component"
+  ],
+  "author": "JP Richardson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jprichardson/elecron-window/issues"
+  },
+  "homepage": "https://github.com/jprichardson/elecron-window",
+  "devDependencies": {
+    "standard": "^3.11.0"
+  }
+}
