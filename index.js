@@ -87,5 +87,6 @@ if (global.constructor.name === 'Window') {
 
 module.exports = {
   createWindow: createWindow, // only call from main process
-  parseArgs: parseArgs // only call from renderer process
+  parseArgs: parseArgs, // only call from renderer process
+  windows: _windows // only call from main
 }

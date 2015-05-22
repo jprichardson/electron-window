@@ -13,7 +13,7 @@ Installation
 Usage
 -----
 
-### API
+### API Methods
 
 #### createWindow(options)
 
@@ -40,6 +40,14 @@ arguments from the main process to the renderer process.
 Instance method to call if you ever want to remove the global reference. Should only need to be called if
 `[destroy()](https://github.com/atom/electron/blob/master/docs/api/browser-window.md#browserwindowdestroy)` is ever called.
 Most likely, you won't need to use this.
+
+
+### API Properties
+
+#### windows
+
+Class property to get a reference to all windows created and their ids.
+
 
 
 
