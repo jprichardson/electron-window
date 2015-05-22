@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jprichardson/elecron-window"
+    "url": "https://github.com/jprichardson/electron-window"
   },
   "keywords": [
     "window",
@@ -21,9 +21,9 @@
   "author": "JP Richardson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jprichardson/elecron-window/issues"
+    "url": "https://github.com/jprichardson/electron-window/issues"
   },
-  "homepage": "https://github.com/jprichardson/elecron-window",
+  "homepage": "https://github.com/jprichardson/electron-window",
   "devDependencies": {
     "standard": "^3.11.0"
   }
