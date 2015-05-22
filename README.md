@@ -48,9 +48,13 @@ Most likely, you won't need to use this.
 **main process**
 
 ```js
-var window = require('electron-window')
+var ewindow = require('electron-window')
 
-var mainWindow = window.createWindow({width: 1000, height: 400})
+var windowOptions = {
+ width: 1000,
+ height: 400
+}
+var mainWindow = ewindow.createWindow(windowOptions)
 
 // can access at window.__args__ from scripts
 // ran from index.html
@@ -65,6 +69,10 @@ mainWindow.showUrl('index.html', args, function() {
 **renderer process**
 
 ```js
+var ewindow = require('electron-window')
+// only call if `preload` is set in `windowOptions`
+eWindow.parseArgs()
+
 console.log(window.__args__)
 // => Object {data: "some secret data"}
 ```
