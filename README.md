@@ -55,13 +55,13 @@ Class property to get a reference to all windows created and their ids.
 **main process**
 
 ```js
-var ewindow = require('electron-window')
+var window = require('electron-window')
 
 var windowOptions = {
  width: 1000,
  height: 400
 }
-var mainWindow = ewindow.createWindow(windowOptions)
+var mainWindow = window.createWindow(windowOptions)
 
 // can access at window.__args__ from scripts
 // ran from index.html
