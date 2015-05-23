@@ -13,6 +13,72 @@ Installation
 Usage
 -----
 
+### TL;DR:
+
+`electron-window` converts this:
+
+```js
+var path = require('path')
+var url = require('url')
+var BrowserWindow = require('browser-window')
+
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the javascript object is GCed.
+var mainWindow = null
+
+function createWin (callback) {
+  mainWindow = new BrowserWindow({
+    width: 1000,
+    height: 400,
+    show: false,
+  })
+
+  var someArgs = {
+    data: 'hi'
+  }
+
+  var indexPath = path.resolve(__dirname, '..', 'weird-location', 'index.html')
+  var indexUrl = url.format({
+    protocol: 'file',
+    pathname: indexPath,
+    slashes: true,
+    hash: encodeURIComponent(JSON.stringify(someArgs))
+  })
+
+  mainWindow.loadUrl(indexUrl)
+
+  mainWindow.on('closed', function() {
+    mainWindow = null
+  })
+
+  mainWindow.webContents.on('did-finish-load', function() {
+    callback(mainWindow)
+  })
+  mainWindow.show()
+}
+
+```
+
+to this
+
+```js
+var path = require('path')
+var window = require('electron-window')
+
+function createWin(callback) {
+  var mainWindow = window.createWindow({width: 1000, height: 400})
+
+  var someArgs = {
+    data: 'hi'
+  }
+  var indexPath = path.resolve(__dirname, '..', 'weird-location', 'index.html')
+  mainWindow.showUrl(indexPath, someArgs, function () {
+    callback(mainWindow)
+  })
+}
+```
+
+
 ### API Methods
 
 #### createWindow(options)
@@ -22,7 +88,7 @@ the following default `options`: `{show: false, resizable: false, frame: true}`.
 to prevent garbage collection, this is handled for you.
 
 
-### parseArgs()
+#### parseArgs()
 
 Instance method to parse arguments in window. You would only need to call from your renderer preload script if you pass in
 [`preload`](https://github.com/atom/electron/blob/master/docs/api/browser-window.md#new-browserwindowoptions).
