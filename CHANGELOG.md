@@ -1,3 +1,7 @@
+0.3.0 / 2015-05-27
+------------------
+- `showUrl()`: actually display window when contents loaded
+
 0.2.1 / 2015-05-22
 ------------------
 - fixed package.json main path bug
