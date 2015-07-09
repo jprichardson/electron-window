@@ -26,5 +26,8 @@
   "homepage": "https://github.com/jprichardson/electron-window",
   "devDependencies": {
     "standard": "^3.11.0"
+  },
+  "dependencies": {
+    "is-electron-renderer": "^1.0.0"
   }
 }
