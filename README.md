@@ -84,7 +84,7 @@ function createWin(callback) {
 #### createWindow(options)
 
 Class method that creates a new [BrowserWindow](https://github.com/atom/electron/blob/master/docs/api/browser-window.md) with
-the following default `options`: `{show: false, resizable: false, frame: true}`. No need to worry about keeping a global reference
+the following default `options`: `{show: false}`. No need to worry about keeping a global reference
 to prevent garbage collection, this is handled for you.
 
 
