@@ -104,7 +104,7 @@ arguments from the main process to the renderer process.
 #### unref()
 
 Instance method to call if you ever want to remove the global reference. Should only need to be called if
-`[destroy()](https://github.com/atom/electron/blob/master/docs/api/browser-window.md#browserwindowdestroy)` is ever called.
+[`destroy()`](https://github.com/atom/electron/blob/master/docs/api/browser-window.md#browserwindowdestroy) is ever called.
 Most likely, you won't need to use this.
 
 
