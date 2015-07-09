@@ -1,6 +1,7 @@
 0.4.0 / 2015-07-09
 ------------------
 - Removed passing defaults of `resizable: false` and `frame: true`.
+- refactored, added tests
 
 0.3.0 / 2015-05-27
 ------------------

@@ -4,7 +4,7 @@
   "description": "Convenience methods for Electron windows.",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "standard"
+    "test": "standard && find ./lib -name *.test.js | xargs mocha"
   },
   "repository": {
     "type": "git",
@@ -25,9 +25,13 @@
   },
   "homepage": "https://github.com/jprichardson/electron-window",
   "devDependencies": {
-    "standard": "^3.11.0"
+    "mocha": "2.x",
+    "proxyquire": "^1.6.0",
+    "standard": "4.x",
+    "stubo": "^0.1.0"
   },
   "dependencies": {
-    "is-electron-renderer": "^1.0.0"
+    "is-electron-renderer": "^1.0.0",
+    "object-assign": "^3.0.0"
   }
 }
