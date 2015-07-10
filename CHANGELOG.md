@@ -1,3 +1,7 @@
+0.4.1 / 2015-07-10
+------------------
+- bug fix: wrong `this context`
+
 0.4.0 / 2015-07-09
 ------------------
 - Removed passing defaults of `resizable: false` and `frame: true`.
