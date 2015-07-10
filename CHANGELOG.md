@@ -1,3 +1,7 @@
+0.4.2 / 2015-07-10
+------------------
+- made callback optional in `showUrl()`
+
 0.4.1 / 2015-07-10
 ------------------
 - bug fix: wrong `this context`
