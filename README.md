@@ -18,6 +18,7 @@ Usage
 `electron-window` converts this:
 
 ```js
+var app = require('app')
 var path = require('path')
 var url = require('url')
 var BrowserWindow = require('browser-window')
@@ -26,17 +27,10 @@ var BrowserWindow = require('browser-window')
 // be closed automatically when the javascript object is GCed.
 var mainWindow = null
 
-function createWin (callback) {
-  mainWindow = new BrowserWindow({
-    width: 1000,
-    height: 400,
-    show: false,
-  })
+app.on('ready', function () {
+  mainWindow = new BrowserWindow({ width: 1000, height: 400, show: false })
 
-  var someArgs = {
-    data: 'hi'
-  }
-
+  var someArgs = { data: 'hi' }
   var indexPath = path.resolve(__dirname, '..', 'weird-location', 'index.html')
   var indexUrl = url.format({
     protocol: 'file',
@@ -45,37 +39,34 @@ function createWin (callback) {
     hash: encodeURIComponent(JSON.stringify(someArgs))
   })
 
-  mainWindow.loadUrl(indexUrl)
-
   mainWindow.on('closed', function() {
     mainWindow = null
   })
 
   mainWindow.webContents.on('did-finish-load', function() {
-    callback(mainWindow)
+    mainWindow.show()
+    console.log('window is now visible!')
   })
-  mainWindow.show()
-}
 
+  mainWindow.loadUrl(indexUrl)
+})
 ```
 
-to this
+to this:
 
 ```js
+var app = require('app')
 var path = require('path')
 var window = require('electron-window')
 
-function createWin(callback) {
+app.on('ready', function () {
   var mainWindow = window.createWindow({width: 1000, height: 400})
-
-  var someArgs = {
-    data: 'hi'
-  }
+  var someArgs = { data: 'hi' }
   var indexPath = path.resolve(__dirname, '..', 'weird-location', 'index.html')
   mainWindow.showUrl(indexPath, someArgs, function () {
-    callback(mainWindow)
+    console.log('window is now visible!')
   })
-}
+})
 ```
 
 
