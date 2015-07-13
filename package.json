@@ -1,6 +1,6 @@
 {
   "name": "electron-window",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Convenience methods for Electron windows.",
   "main": "./lib/index.js",
   "scripts": {

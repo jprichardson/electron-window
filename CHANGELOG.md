@@ -1,3 +1,7 @@
+0.4.3 / 2015-07-13
+------------------
+- regression: `showUrl()` without window arguments wouldn't actually show window
+
 0.4.2 / 2015-07-10
 ------------------
 - made callback optional in `showUrl()`
