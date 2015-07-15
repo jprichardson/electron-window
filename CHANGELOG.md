@@ -1,3 +1,7 @@
+0.5.0 / 2015-07-15
+------------------
+- upgraed to `is-electron-renderer@2.0` (Electron removed `global` for non-node integration)
+
 0.4.3 / 2015-07-13
 ------------------
 - regression: `showUrl()` without window arguments wouldn't actually show window
