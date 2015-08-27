@@ -1,3 +1,7 @@
+0.6.0 / 2015-08-27
+------------------
+- added support for data uris. See: https://github.com/jprichardson/electron-window/pull/2
+
 0.5.0 / 2015-07-15
 ------------------
 - upgraded to `is-electron-renderer@2.0` (Electron removed `global` for non-node integration)
