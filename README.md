@@ -90,6 +90,7 @@ Instance method to parse arguments in window. You would only need to call from y
 Instance method that shows the url. When the url is finished loading, the callback is returned. If the optional `argsForRenderer` is set
 then `__args__` will be a global object for the page in the renderer process. This is a convenient way to pass
 arguments from the main process to the renderer process.
+`argsForRenderer` could also contains boolean `show`. If set to `false`, the window is not showed on loading. Defaults to `true`. This argument is removed from `argsForRenderer` object before being passed to renderer process.
 
 
 #### unref()
