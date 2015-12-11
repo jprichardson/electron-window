@@ -1,3 +1,7 @@
+0.6.2 / 2015-12-11
+------------------
+- Bug in closing window. See: https://github.com/jprichardson/electron-window/issues/5 https://github.com/jprichardson/electron-window/pull/7
+
 0.6.1 / 2015-12-11
 ------------------
 - use `loadURL` if available instead of `loadUrl`. See: https://github.com/jprichardson/electron-window/pull/6#issuecomment-163826265
