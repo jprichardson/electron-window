@@ -1,3 +1,7 @@
+0.6.1 / 2015-12-11
+------------------
+- use `loadURL` if available instead of `loadUrl`. See: https://github.com/jprichardson/electron-window/pull/6#issuecomment-163826265
+
 0.6.0 / 2015-08-27
 ------------------
 - added support for data uris. See: https://github.com/jprichardson/electron-window/pull/2
