@@ -1,3 +1,7 @@
+0.6.3 / 2016-04-06
+------------------
+- remove v37 deprecation errors. [#9][#9]
+
 0.6.2 / 2015-12-11
 ------------------
 - Bug in closing window. See: https://github.com/jprichardson/electron-window/issues/5 https://github.com/jprichardson/electron-window/pull/7
@@ -52,3 +56,23 @@
 0.1.0 / 2015-05-22
 ------------------
 - initial release
+
+
+<!--- Remove 0.37 deprecation warnings -->
+[#9]: https://github.com/jprichardson/electron-window/pull/9
+<!--- Deprecated Url methods in favor of URL (following Electron convention) -->
+[#8]: https://github.com/jprichardson/electron-window/issues/8
+<!--- Remove window reference on `close` instead of `closed` -->
+[#7]: https://github.com/jprichardson/electron-window/pull/7
+<!--- Change win.loadUrl to win.loadURL -->
+[#6]: https://github.com/jprichardson/electron-window/pull/6
+<!--- Error message when closing window -->
+[#5]: https://github.com/jprichardson/electron-window/issues/5
+<!--- loadUrl deprecation in BrowserWindow -->
+[#4]: https://github.com/jprichardson/electron-window/issues/4
+<!--- added `showUrl` `show` arg -->
+[#3]: https://github.com/jprichardson/electron-window/pull/3
+<!--- added datauri case and test -->
+[#2]: https://github.com/jprichardson/electron-window/pull/2
+<!--- BrowserWindow Methods? -->
+[#1]: https://github.com/jprichardson/electron-window/issues/1
