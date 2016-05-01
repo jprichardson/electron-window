@@ -1,3 +1,8 @@
+0.7.0 / 2016-05-01
+------------------
+- fix deprecation notice for old Electron [#13][#13]
+- Standard upgrade
+
 0.6.4 / 2016-04-07
 ------------------
 - fix renderer tests v37.5
@@ -61,22 +66,16 @@
 ------------------
 - initial release
 
-
-<!--- Remove 0.37 deprecation warnings -->
-[#9]: https://github.com/jprichardson/electron-window/pull/9
-<!--- Deprecated Url methods in favor of URL (following Electron convention) -->
-[#8]: https://github.com/jprichardson/electron-window/issues/8
-<!--- Remove window reference on `close` instead of `closed` -->
-[#7]: https://github.com/jprichardson/electron-window/pull/7
-<!--- Change win.loadUrl to win.loadURL -->
-[#6]: https://github.com/jprichardson/electron-window/pull/6
-<!--- Error message when closing window -->
-[#5]: https://github.com/jprichardson/electron-window/issues/5
-<!--- loadUrl deprecation in BrowserWindow -->
-[#4]: https://github.com/jprichardson/electron-window/issues/4
-<!--- added `showUrl` `show` arg -->
-[#3]: https://github.com/jprichardson/electron-window/pull/3
-<!--- added datauri case and test -->
-[#2]: https://github.com/jprichardson/electron-window/pull/2
-<!--- BrowserWindow Methods? -->
-[#1]: https://github.com/jprichardson/electron-window/issues/1
+[#13]: https://github.com/jprichardson/electron-window/pull/13      "Use opts.preload when Electron version is less than 0.37.3"
+[#12]: https://github.com/jprichardson/electron-window/pull/12      "removed options.preload deprecation errors."
+[#11]: https://github.com/jprichardson/electron-window/issues/11    "replace options.preload with options.webPreferences.preload"
+[#10]: https://github.com/jprichardson/electron-window/pull/10      "Fix preload scripts in electron-window"
+[#9]: https://github.com/jprichardson/electron-window/pull/9        "Remove 0.37 deprecation warnings"
+[#8]: https://github.com/jprichardson/electron-window/issues/8      "Deprecated Url methods in favor of URL (following Electron convention)"
+[#7]: https://github.com/jprichardson/electron-window/pull/7        "Remove window reference on `close` instead of `closed`"
+[#6]: https://github.com/jprichardson/electron-window/pull/6        "Change win.loadUrl to win.loadURL"
+[#5]: https://github.com/jprichardson/electron-window/issues/5      "Error message when closing window"
+[#4]: https://github.com/jprichardson/electron-window/issues/4      "loadUrl deprecation in BrowserWindow"
+[#3]: https://github.com/jprichardson/electron-window/pull/3        "added `showUrl` `show` arg"
+[#2]: https://github.com/jprichardson/electron-window/pull/2        "added datauri case and test"
+[#1]: https://github.com/jprichardson/electron-window/issues/1      "BrowserWindow Methods?"
