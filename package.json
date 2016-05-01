@@ -27,7 +27,7 @@
   "devDependencies": {
     "mocha": "2.x",
     "proxyquire": "^1.6.0",
-    "standard": "4.x",
+    "standard": "^6.0.8",
     "stubo": "^0.1.0"
   },
   "dependencies": {
