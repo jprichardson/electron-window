@@ -63,7 +63,7 @@ const path = require('path')
 const window = require('electron-window')
 
 app.on('ready', () => {
-  const mainWindow = window.createWindow({width: 1000, height: 400})
+  const mainWindow = window.createWindow({ width: 1000, height: 400 })
   const someArgs = { data: 'hi' }
   const indexPath = path.resolve(__dirname, '..', 'weird-location', 'index.html')
   
@@ -79,7 +79,7 @@ app.on('ready', () => {
 #### createWindow(options)
 
 Class method that creates a new [BrowserWindow](https://github.com/atom/electron/blob/master/docs/api/browser-window.md) with
-the following default `options`: `{show: false}`. No need to worry about keeping a global reference
+the following default `options`: `{ show: false }`. No need to worry about keeping a global reference
 to prevent garbage collection, this is handled for you.
 
 
@@ -107,7 +107,7 @@ Most likely, you won't need to use this.
 
 #### windows
 
-Class property to get a reference to all windows created and their ids.
+Class property to get a reference to all windows created and their ids. This is in the form of an object where the keys are window ids, and the values are instances of `BrowserWindow`.
 
 
 
