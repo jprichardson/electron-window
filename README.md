@@ -18,32 +18,35 @@ Usage
 `electron-window` converts this:
 
 ```js
-var app = require('app')
-var path = require('path')
-var url = require('url')
-var BrowserWindow = require('browser-window')
+const { 
+  app, 
+  BrowserWindow 
+} = require('electron')
+
+const path = require('path')
+const url = require('url')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the javascript object is GCed.
-var mainWindow = null
+let mainWindow = null
 
-app.on('ready', function () {
+app.on('ready', () => {
   mainWindow = new BrowserWindow({ width: 1000, height: 400, show: false })
 
-  var someArgs = { data: 'hi' }
-  var indexPath = path.resolve(__dirname, '..', 'weird-location', 'index.html')
-  var indexUrl = url.format({
+  const someArgs = { data: 'hi' }
+  const indexPath = path.resolve(__dirname, '..', 'weird-location', 'index.html')
+  const indexUrl = url.format({
     protocol: 'file',
     pathname: indexPath,
     slashes: true,
     hash: encodeURIComponent(JSON.stringify(someArgs))
   })
 
-  mainWindow.on('closed', function() {
+  mainWindow.on('closed', () => {
     mainWindow = null
   })
 
-  mainWindow.webContents.on('did-finish-load', function() {
+  mainWindow.webContents.on('did-finish-load', () => {
     mainWindow.show()
     console.log('window is now visible!')
   })
@@ -55,15 +58,16 @@ app.on('ready', function () {
 to this:
 
 ```js
-var app = require('app')
-var path = require('path')
-var window = require('electron-window')
+const { app } = require('electron')
+const path = require('path')
+const window = require('electron-window')
 
-app.on('ready', function () {
-  var mainWindow = window.createWindow({width: 1000, height: 400})
-  var someArgs = { data: 'hi' }
-  var indexPath = path.resolve(__dirname, '..', 'weird-location', 'index.html')
-  mainWindow.showUrl(indexPath, someArgs, function () {
+app.on('ready', () => {
+  const mainWindow = window.createWindow({width: 1000, height: 400})
+  const someArgs = { data: 'hi' }
+  const indexPath = path.resolve(__dirname, '..', 'weird-location', 'index.html')
+  
+  mainWindow.showUrl(indexPath, someArgs, () => {
     console.log('window is now visible!')
   })
 })
@@ -112,20 +116,22 @@ Class property to get a reference to all windows created and their ids.
 **main process**
 
 ```js
-var window = require('electron-window')
+const window = require('electron-window')
 
-var windowOptions = {
- width: 1000,
- height: 400
+const windowOptions = {
+  width: 1000,
+  height: 400
 }
-var mainWindow = window.createWindow(windowOptions)
+
+const mainWindow = window.createWindow(windowOptions)
 
 // can access at window.__args__ from scripts
 // ran from index.html
-var args = {
+const args = {
   data: 'some secret data'
 }
-mainWindow.showUrl('index.html', args, function() {
+
+mainWindow.showUrl('index.html', args, () => {
   console.log('the window should be showing with the contents of the URL now')
 })
 ```
