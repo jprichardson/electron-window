@@ -1,3 +1,7 @@
+0.8.0 / 2016-05-11
+------------------
+- **BREAKING CHANGE**: you must at least use Electron v1.0.0.
+
 0.7.0 / 2016-05-01
 ------------------
 - fix deprecation notice for old Electron [#13][#13]
