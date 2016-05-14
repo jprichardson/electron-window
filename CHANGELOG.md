@@ -70,6 +70,14 @@
 ------------------
 - initial release
 
+<!-- auto generated with: jprichardson/issue-links -->
+
+[#19]: https://github.com/jprichardson/electron-window/pull/19      "Use Electron 1.0 API consistently"
+[#18]: https://github.com/jprichardson/electron-window/pull/18      "Support Electron 1.0"
+[#17]: https://github.com/jprichardson/electron-window/pull/17      "Update README"
+[#16]: https://github.com/jprichardson/electron-window/issues/16    "Update README"
+[#15]: https://github.com/jprichardson/electron-window/issues/15    "Electron complains on launch: (electron) options.preload is deprecated. Use options.webPreferences.preload instead."
+[#14]: https://github.com/jprichardson/electron-window/issues/14    "Remove object-assign dependency."
 [#13]: https://github.com/jprichardson/electron-window/pull/13      "Use opts.preload when Electron version is less than 0.37.3"
 [#12]: https://github.com/jprichardson/electron-window/pull/12      "removed options.preload deprecation errors."
 [#11]: https://github.com/jprichardson/electron-window/issues/11    "replace options.preload with options.webPreferences.preload"
