@@ -31,7 +31,6 @@
     "stubo": "^0.1.0"
   },
   "dependencies": {
-    "is-electron-renderer": "^2.0.0",
-    "object-assign": "^3.0.0"
+    "is-electron-renderer": "^2.0.0"
   }
 }
