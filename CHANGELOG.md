@@ -1,3 +1,7 @@
+0.8.1 / 2016-05-14
+------------------
+- removed dep `object-assign`. See: [#14][#14]
+
 0.8.0 / 2016-05-11
 ------------------
 - **BREAKING CHANGE**: you must at least use Electron v1.0.0.
